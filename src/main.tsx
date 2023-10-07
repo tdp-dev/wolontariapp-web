@@ -6,14 +6,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "@styles/index.scss";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "settings/",
-        element: <Settings />,
-    },
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: 'events/:eventId',
+    element: <Settings />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
