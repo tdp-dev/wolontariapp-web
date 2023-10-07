@@ -1,3 +1,4 @@
+import React from 'react';
 import TextLogo from './TextLogo';
 import Profile from './Profile';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import EventList from './EventList';
 import Button from '@components/Button';
 
