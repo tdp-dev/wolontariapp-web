@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
-import { Check, X } from 'lucide-react';
-
-const ListElement: React.FC = () => {
+const ListElement: React.FC<PropsWithChildren> = ({children}) => {
   return (
     <div className='application-list-element'>
       <span className='application-list-element__header-element'>20.03.2023</span>
@@ -22,14 +20,7 @@ const ListElement: React.FC = () => {
       <span className='application-list-element__header-element'>104</span>
 
       <span className='application-list-element__header-element'>
-        <div className='application-list-element__button-wrapper'>
-          <div className='application-list-element__button application-list-element__button--accept'>
-            <Check size={22} />
-          </div>
-          <div className='application-list-element__button application-list-element__button--reject'>
-            <X size={22} />
-          </div>
-        </div>
+        {children}
       </span>
     </div>
   );

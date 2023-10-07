@@ -1,6 +1,6 @@
 import React from 'react';
-import VolunteerListElement from './VolunteerListElement';
-import Button from '@components/Button';
+import ListElement from './ListElement';
+import VolunteerActionButtons from './VolunteerActionButtons';
 
 export default function VolunteersList() {
   return (
@@ -25,16 +25,16 @@ export default function VolunteersList() {
         <span className='volunteers-list__header-element'>Akcje</span>
       </div>
       <div className='volunteers-list__list'>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
-        <VolunteerListElement></VolunteerListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement><VolunteerActionButtons /></ListElement>
       </div>
     </div>
   );

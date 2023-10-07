@@ -1,6 +1,7 @@
 import React from 'react';
 import ListElement from './ListElement';
 import Button from '@components/Button';
+import ApplicationActionButtons from './ApplicationActionButtons';
 
 export default function List() {
   return (
@@ -25,16 +26,16 @@ export default function List() {
         <span className='application-list__header-element'>Decyzja</span>
       </div>
       <div className='application-list__list'>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
-        <ListElement></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
+        <ListElement><ApplicationActionButtons /></ListElement>
       </div>
       <div className='application-list__buttons'>
         <div className='application-list__button'>
