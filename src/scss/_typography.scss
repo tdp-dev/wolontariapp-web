@@ -18,7 +18,22 @@
   font-family: $helvetica_font_family;
 }
 
+@mixin lead2 {
+  font-size: $lead2_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin lead3 {
+  font-size: $lead3_font_size;
+  font-family: $helvetica_font_family;
+}
+
 @mixin base {
   font-size: $base_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin base2 {
+  font-size: $base2_font_size;
   font-family: $helvetica_font_family;
 }

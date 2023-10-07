@@ -1,0 +1,15 @@
+.header {
+  padding: 3.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  height: min-content;
+  align-items: center;
+
+  &__logo {
+    svg {
+      width: 16rem;
+      height: auto;
+    }
+  }
+}

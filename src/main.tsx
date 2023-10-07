@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: 'settings/',
+    path: 'events/:eventId',
     element: <Settings />,
   },
 ]);

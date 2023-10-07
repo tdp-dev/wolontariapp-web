@@ -1,0 +1,15 @@
+.event-section {
+  grid-column: 1/-1;
+
+  &__title {
+    @include h3;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6.4rem;
+  }
+}

@@ -1,0 +1,44 @@
+.event-card {
+  padding: 3.2rem;
+  display: flex;
+  gap: 3.2rem;
+  background-color: $color_white;
+  border-radius: 1.6rem;
+  grid-column: span 6;
+
+  &__image {
+    width: 48rem;
+    height: 20rem;
+    background-color: #909090;
+    border-radius: 0.8rem;
+  }
+
+  &__text {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include h3;
+    color: $color_black;
+    margin-bottom: 0.4rem;
+  }
+
+  &__date {
+    @include lead3;
+    color: #909090;
+    margin-bottom: 1.6rem;
+    display: block;
+  }
+
+  &__description {
+    @include base2;
+    color: $color_black;
+  }
+
+  &__button {
+    margin-top: auto;
+    align-self: flex-end;
+  }
+}
