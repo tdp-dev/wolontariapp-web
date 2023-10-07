@@ -1,0 +1,32 @@
+// COLORS
+
+$color_black: #232323;
+$color_grey: #dfdfdf;
+$color_white: #ffffff;
+
+// TYPOGRAPHY
+
+$h1_font_size: 5rem;
+$h2_font_size: 4rem;
+$h3_font_size: 3rem;
+$h4_font_size: 2rem;
+$base_font_size: 1.8rem;
+
+// FONT FAMILY
+
+$helvetica_font_family: 'Helvetica', sans-serif;
+
+// BRAKEPOINTS
+
+$breakpoints: (
+  'mobile-s': 320px,
+  'mobile': 360px,
+  'mobile-l': 425px,
+  'phablet': 520px,
+  'portrait': 768px,
+  'tablet': 1024px,
+  'laptop-s': 1280px,
+  'laptop': 1366px,
+  'laptop-l': 1440px,
+  'desktop': 1680px,
+) !default;

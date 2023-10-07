@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+html {
+  font-size: math.div(10, 1920) * 100vw;
+
+  @include bp('laptop-l') {
+    font-size: math.div(10, 1440) * 100vw;
+  }
+
+  @include bp('portrait') {
+    font-size: math.div(10, 768) * 100vw;
+  }
+
+  @include bp('phablet') {
+    font-size: 10px;
+  }
+}

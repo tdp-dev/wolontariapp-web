@@ -1,0 +1,9 @@
+body {
+  background-color: $color_grey;
+  height: 100vh;
+}
+
+#root {
+  @include wrapper;
+  height: 100%;
+}

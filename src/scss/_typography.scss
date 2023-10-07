@@ -1,0 +1,24 @@
+@mixin h1 {
+  font-size: $h1_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin h2 {
+  font-size: $h2_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin h3 {
+  font-size: $h3_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin h4 {
+  font-size: $h4_font_size;
+  font-family: $helvetica_font_family;
+}
+
+@mixin base {
+  font-size: $base_font_size;
+  font-family: $helvetica_font_family;
+}

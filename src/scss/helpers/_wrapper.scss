@@ -1,0 +1,6 @@
+@mixin wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.6rem;
+  margin: 0 2rem;
+}

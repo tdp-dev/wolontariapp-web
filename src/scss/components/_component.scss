@@ -1,0 +1,21 @@
+.component {
+  &__h1 {
+    @include h1;
+    color: $color_black;
+  }
+
+  &__h2 {
+    @include h2;
+    color: $color_black;
+  }
+
+  &__h3 {
+    @include h3;
+    color: $color_black;
+  }
+
+  &__text {
+    @include base;
+    color: $color_black;
+  }
+}
