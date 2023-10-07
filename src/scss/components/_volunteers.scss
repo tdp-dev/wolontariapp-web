@@ -1,8 +1,15 @@
-.event-section {
+.volunteers {
   grid-column: 1/-1;
 
   &__title {
     @include h3;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1.6rem;
+      align-items: center;
+    }
   }
 
   &__header {
@@ -12,5 +19,9 @@
     align-items: center;
     margin-bottom: 6.4rem;
     margin-top: 1.6rem;
+  }
+
+  &__list {
+    grid-column: 1/-1;
   }
 }

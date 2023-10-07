@@ -5,7 +5,7 @@ const Settings: React.FC = () => {
   return (
     <>
       <div>Settings</div>
-      <Camera color="red" size={48} />
+      <Camera color='red' size={48} />
     </>
   );
 };
