@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Check, X } from 'lucide-react';
 
-const ApplicationsListElement: React.FC = () => {
+const ListElement: React.FC = () => {
   return (
     <div className='application-list-element'>
       <span className='application-list-element__header-element'>20.03.2023</span>
@@ -35,4 +35,4 @@ const ApplicationsListElement: React.FC = () => {
   );
 };
 
-export default ApplicationsListElement;
+export default ListElement;

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import ApplicationsList from '@components/Events/ApplicationsList';
+import List from '@components/Lists/List';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
@@ -21,7 +21,7 @@ const Applications: React.FC = () => {
         </div>
 
         <div className='application__list'>
-          <ApplicationsList></ApplicationsList>
+          <List></List>
         </div>
       </div>
     </>

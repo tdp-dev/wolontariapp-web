@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
-import ApplicationsList from '@components/Events/ApplicationsList';
+import ApplicationsList from '@components/Lists/List';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import VolunteersList from '@components/Events/VolunteersList';
+import VolunteersList from '@components/Lists/VolunteersList';
 
 const Volunteers: React.FC = () => {
   const navigate = useNavigate();

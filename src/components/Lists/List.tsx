@@ -1,8 +1,8 @@
 import React from 'react';
-import ApplicationsListElement from './ApplicationListElement';
+import ListElement from './ListElement';
 import Button from '@components/Button';
 
-export default function ApplicationsList() {
+export default function List() {
   return (
     <div className='application-list'>
       <div className='application-list__header'>
@@ -25,16 +25,16 @@ export default function ApplicationsList() {
         <span className='application-list__header-element'>Decyzja</span>
       </div>
       <div className='application-list__list'>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
-        <ApplicationsListElement></ApplicationsListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
+        <ListElement></ListElement>
       </div>
       <div className='application-list__buttons'>
         <div className='application-list__button'>
