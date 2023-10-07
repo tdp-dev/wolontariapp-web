@@ -6,13 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 interface EventCardProps {
+  id: string;
   title: string;
   description: string;
   date: string;
   image: string;
 }
 
-export default function EventCard({ title, description, date, image }: EventCardProps) {
+export default function EventCard({ id, title, description, date, image }: EventCardProps) {
   const navigate = useNavigate();
   const [imageUri, setImageUri] = useState(null);
 
@@ -33,7 +34,7 @@ export default function EventCard({ title, description, date, image }: EventCard
   }, []);
 
   const onClick = useCallback(() => {
-    navigate(`/events/1`);
+    navigate(`/events/${id}`);
   }, []);
 
   return (

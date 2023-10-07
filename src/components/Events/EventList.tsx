@@ -11,7 +11,7 @@ export default function EventList() {
   }, []);
 
   const eventCards = useMemo(() => {
-    return events.map(({ id, title, description, image }) => <EventCard key={id} title={title} description={description} image={image} />);
+    return events.map(({ id, title, description, image }) => <EventCard key={id} id={id} title={title} description={description} image={image} />);
   }, [events]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Button from '@components/Button';
 import BlockWidget from '@components/BlockWidget';
 import { useParams } from 'react-router-dom';
@@ -7,9 +7,35 @@ import { useNavigate } from 'react-router-dom';
 import { User2, Bell, Check, ClipboardList, Mail, FileText, BarChart4, Cog } from 'lucide-react';
 import EventInfo from './EventInfo';
 import EventSummary from './EventSummary';
+import API from 'src/helpers/apiConnector';
+import axios from 'axios';
 
 export default function EventPage() {
   const { eventId } = useParams();
+  const [eventData, setEventData] = useState();
+  const [image, setImage] = useState();
+
+  const fetchEvent = useCallback(async () => {
+    const { data } = await API.get(`/events/${eventId}`);
+    setEventData(data);
+    fetchImageHandler(data.image);
+  }, [eventId]);
+
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
+  const fetchImageHandler = async (imageUrl: string) => {
+    const { data } = await axios.get(imageUrl, {
+      responseType: 'blob',
+    });
+    let reader = new window.FileReader();
+    reader.readAsDataURL(data);
+    reader.onload = function (event) {
+      let imageDataUrl = event.target.result;
+      setImage(imageDataUrl);
+    };
+  };
 
   const navigate = useNavigate();
 
@@ -30,7 +56,7 @@ export default function EventPage() {
       <div className='event-page__header'>
         <div className='event-page__title-wrapper'>
           <ArrowLeft size={32} onClick={onClick}></ArrowLeft>
-          <h2 className='event-page__title'>Dolore laboris Lorem sint</h2>
+          <h2 className='event-page__title'>Wróć do listy postów</h2>
         </div>
 
         <div className='event-page__button'>
