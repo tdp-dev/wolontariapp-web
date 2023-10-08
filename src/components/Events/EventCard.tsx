@@ -39,9 +39,7 @@ export default function EventCard({ id, title, description, date, image }: Event
 
   return (
     <div className='event-card'>
-      <div className='event-card__image'>
-        <img src={imageUri} alt='event image' />
-      </div>
+      <img src={imageUri} alt='event image' className='event-card__image' />
 
       <div className='event-card__text'>
         <h3 className='event-card__title'>{title}</h3>

@@ -7,6 +7,7 @@ import '@styles/index.scss';
 import EventPage from '@components/Events/EventPage';
 import Applications from '@routes/Applications';
 import Volunteers from '@routes/Volunteers';
+import Presence from '@routes/Presence';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: 'events/:eventId/volunteers',
     element: <Volunteers />,
+  },
+  {
+    path: 'events/:eventId/presence',
+    element: <Presence />,
   },
 ]);
 

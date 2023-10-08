@@ -25,16 +25,36 @@ export default function VolunteersList() {
         <span className='volunteers-list__header-element'>Akcje</span>
       </div>
       <div className='volunteers-list__list'>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
-        <ListElement><VolunteerActionButtons /></ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
+        <ListElement>
+          <VolunteerActionButtons />
+        </ListElement>
       </div>
     </div>
   );
