@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import List from '@components/Lists/List';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import BackButton from '@components/BackButton';
 
 const Applications: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Applications: React.FC = () => {
       <div className='application'>
         <div className='application__header'>
           <div className='application__title-wrapper'>
-            <ArrowLeft size={32} onClick={onClick}></ArrowLeft>
+            <BackButton></BackButton>
             <h2 className='application__title'>Zgłoszenia do wolontariatu</h2>
           </div>
         </div>

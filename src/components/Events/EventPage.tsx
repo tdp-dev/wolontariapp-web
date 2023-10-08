@@ -9,6 +9,7 @@ import EventInfo from './EventInfo';
 import EventSummary from './EventSummary';
 import API from 'src/helpers/apiConnector';
 import axios from 'axios';
+import BackButton from '@components/BackButton';
 
 export default function EventPage() {
   const { eventId } = useParams();
@@ -51,16 +52,16 @@ export default function EventPage() {
     navigate('volunteers');
   }, []);
 
+  const navigateToPresence = useCallback(() => {
+    navigate('presence');
+  }, []);
+
   return (
     <div className='event-page'>
       <div className='event-page__header'>
         <div className='event-page__title-wrapper'>
-          <ArrowLeft size={32} onClick={onClick}></ArrowLeft>
+          <BackButton></BackButton>
           <h2 className='event-page__title'>Wróć do listy postów</h2>
-        </div>
-
-        <div className='event-page__button'>
-          <Button content='Ustawienia'></Button>
         </div>
       </div>
 
@@ -75,7 +76,7 @@ export default function EventPage() {
       <div className='event-page__widgets'>
         <BlockWidget icon={<Bell />} content='Powiadomienia'></BlockWidget>
         <BlockWidget icon={<User2 />} content='Wolontariusze' onClick={navigateToVolunteers}></BlockWidget>
-        <BlockWidget icon={<Check />} content='Lista obecności'></BlockWidget>
+        <BlockWidget icon={<Check />} content='Lista obecności' onClick={navigateToPresence}></BlockWidget>
         <BlockWidget icon={<ClipboardList />} content='Zgłoszenia' onClick={navigateToApplications}></BlockWidget>
         <BlockWidget icon={<Mail />} content='Wiadomości'></BlockWidget>
         <BlockWidget icon={<FileText />} content='Raporty'></BlockWidget>

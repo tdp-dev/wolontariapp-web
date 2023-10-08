@@ -3,6 +3,7 @@ import ApplicationsList from '@components/Lists/List';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import VolunteersList from '@components/Lists/VolunteersList';
+import BackButton from '@components/BackButton';
 
 const Volunteers: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Volunteers: React.FC = () => {
       <div className='volunteers'>
         <div className='volunteers__header'>
           <div className='volunteers__title-wrapper'>
-            <ArrowLeft size={32} onClick={onClick}></ArrowLeft>
+            <BackButton></BackButton>
             <h2 className='volunteers__title'>Zgłoszenia do wolontariatu</h2>
           </div>
         </div>

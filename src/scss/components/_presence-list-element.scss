@@ -1,4 +1,4 @@
-.volunteer-list-element {
+.presence-list-element {
   background-color: $color_white;
   height: 100%;
   grid-column: 1/-1;
@@ -30,34 +30,49 @@
     display: flex;
     padding: 0.4rem;
     border-radius: 0.4rem;
-    background-color: #b2c2ff;
-    border: 1px solid #344789;
-    color: #344789;
+    background-color: #e9e9e9;
+    border: 1px solid #909090;
+    color: #909090;
     transition:
       background-color 0.2s,
       color 0.2s;
     cursor: pointer;
+
+    &.active,
     &:hover {
       color: $color_white;
-      background-color: #344789;
+      background-color: #909090;
+      border: 1px solid #909090;
     }
 
     &--accept {
-      background-color: #cdffd4;
-      border: 1px solid rgb(48 118 58);
-      color: rgb(48 118 58);
-    }
-
-    &--reject {
-      background-color: #ff9393;
-      border: 1px solid #932424;
-      color: #932424;
+      &.active {
+        background-color: #cdffd4;
+        border: 1px solid rgb(48 118 58);
+        color: rgb(48 118 58);
+      }
 
       &:hover {
         color: $color_white;
+        border: 1px solid rgb(48 118 58);
+        background-color: rgb(48 118 58);
+      }
+    }
+
+    &--reject {
+      &.active {
+        background-color: #ff9393;
+        border: 1px solid #932424;
+        color: #932424;
+      }
+
+      &:hover {
+        color: $color_white;
+        border: 1px solid #932424;
         background-color: #932424;
       }
     }
+
     &-wrapper {
       display: flex;
       flex-direction: row;

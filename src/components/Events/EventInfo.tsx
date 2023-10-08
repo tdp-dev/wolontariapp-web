@@ -18,7 +18,7 @@ export default function EventInfo() {
     let reader = new window.FileReader();
     reader.readAsDataURL(data);
     reader.onload = function (event) {
-      let imageDataUrl = event.target.result;
+      let imageDataUrl = event.target?.result;
       setImage(imageDataUrl);
     };
   };
@@ -40,9 +40,7 @@ export default function EventInfo() {
         <Button content='Edytuj'></Button>
       </h2>
       <div className='event-info__content'>
-        <div className='event-info__image'>
-          <img src={image} alt='event-image' />
-        </div>
+        <img src={image} alt='event-image' className='event-info__image' />
         <div className='event-info__text'>
           <h2 className='event-info__title'>{eventData?.title}</h2>
           <span className='event-info__date'>{eventData?.date}</span>
