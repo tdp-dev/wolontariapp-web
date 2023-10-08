@@ -31,9 +31,11 @@
 @mixin base {
   font-size: $base_font_size;
   font-family: $helvetica_font_family;
+  line-height: $base_line_height;
 }
 
 @mixin base2 {
   font-size: $base2_font_size;
   font-family: $helvetica_font_family;
+  line-height: $base_line_height;
 }

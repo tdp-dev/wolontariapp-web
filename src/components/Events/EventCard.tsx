@@ -1,23 +1,55 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Button from '@components/Button';
+import { Route, Routes } from 'react-dom/client';
+import EventPage from './EventPage';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-export default function EventCard() {
+interface EventCardProps {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+}
+
+export default function EventCard({ id, title, description, date, image }: EventCardProps) {
+  const navigate = useNavigate();
+  const [imageUri, setImageUri] = useState(null);
+
+  const fetchImageHandler = async (imageUrl: string) => {
+    const { data } = await axios.get(imageUrl, {
+      responseType: 'blob',
+    });
+    let reader = new window.FileReader();
+    reader.readAsDataURL(data);
+    reader.onload = function (event) {
+      let imageDataUrl = event.target.result;
+      setImageUri(imageDataUrl);
+    };
+  };
+
+  useEffect(() => {
+    fetchImageHandler(image);
+  }, []);
+
+  const onClick = useCallback(() => {
+    navigate(`/events/${id}`);
+  }, []);
+
   return (
-    <div className="event-card">
-      <div className="event-card__image"></div>
+    <div className='event-card'>
+      <div className='event-card__image'>
+        <img src={imageUri} alt='event image' />
+      </div>
 
-      <div className="event-card__text">
-        <h3 className="event-card__title">Dolore laboris Lorem sint</h3>
-        <span className="event-card__date">12.20.2023 - 20.12.2023</span>
-        <p className="event-card__description">
-          nulla cillum nostrud et consectetur fugiat id deserunt elit ex enim
-          est fugiat do exercitation culpa mollit mollit consequat duis nostrud
-          ipsum deserunt occaecat in labore mollit officia non quis qui ad
-          fugiat id
-        </p>
+      <div className='event-card__text'>
+        <h3 className='event-card__title'>{title}</h3>
+        <span className='event-card__date'>{date}</span>
+        <p className='event-card__description'>{description}</p>
 
-        <div className="event-card__button">
-          <Button content="Zarządzaj"></Button>
+        <div className='event-card__button'>
+          <Button content='Zarządzaj' onClick={onClick}></Button>
         </div>
       </div>
     </div>

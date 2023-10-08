@@ -1,9 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Home from "@routes/Home";
-import Settings from "@routes/Settings";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "@styles/index.scss";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Home from '@routes/Home';
+import Header from '@components/Header';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import '@styles/index.scss';
+import EventPage from '@components/Events/EventPage';
+import Applications from '@routes/Applications';
+import Volunteers from '@routes/Volunteers';
 
 const router = createBrowserRouter([
   {
@@ -12,13 +15,22 @@ const router = createBrowserRouter([
   },
   {
     path: 'events/:eventId',
-    element: <Settings />,
+    element: <EventPage />,
+  },
+  {
+    path: 'events/:eventId/applications',
+    element: <Applications />,
+  },
+  {
+    path: 'events/:eventId/volunteers',
+    element: <Volunteers />,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
-    <React.StrictMode>
-        <RouterProvider router={router} />
-    </React.StrictMode>
+  <React.StrictMode>
+    <Header></Header>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
 );

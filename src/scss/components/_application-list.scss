@@ -1,0 +1,32 @@
+.application-list {
+  background-color: $color_white;
+  height: 100%;
+  padding: 3.6rem 0;
+  border-radius: 1.6rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 2rem;
+    border-bottom: 1px #dfdfdf solid;
+    padding: 0 3.6rem 1.6rem;
+
+    &-element {
+      grid-column: span 1;
+      @include lead3;
+      font-weight: bold;
+    }
+  }
+
+  &__list {
+    margin-bottom: 3.6rem;
+  }
+
+  &__buttons {
+    margin: 0 3.6rem;
+    display: flex;
+    gap: 1.6rem;
+    justify-content: flex-end;
+  }
+}
