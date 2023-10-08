@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import ApplicationsList from '@components/Lists/List';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import VolunteersList from '@components/Lists/VolunteersList';
 

@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import ListElement from './ListElement';
 import Button from '@components/Button';
 import ApplicationActionButtons from './ApplicationActionButtons';
+import { useParams } from 'react-router-dom';
+import API from 'src/helpers/apiConnector';
 
 export default function List() {
+  const { eventId } = useParams();
+  const [registrations, setRegistrations] = useState([]);
+
+  const fetchRegistrations = useCallback(async () => {
+    const { data } = await API.get(`/events/${eventId}/registrations?status=REGISTERED`);
+    setRegistrations(data);
+  }, []);
+
+  const onRemove = useCallback(
+    async (registrationId: string) => {
+      setRegistrations(registrations.filter((registration) => registration.id !== registrationId));
+    },
+    [registrations],
+  );
+
+  useEffect(() => {
+    fetchRegistrations();
+  }, []);
+
+  const registrationsComponents = useMemo(() => {
+    return registrations.map(({ id, user, date_created }) => (
+      <ListElement
+        key={id}
+        id={id}
+        firstName={user.first_name}
+        lastName={user.last_name}
+        dateOfBirth={user.date_of_born}
+        email={user.email}
+        phoneNumber='+48 885 472 749'
+        userDateCreated={user.date_created.split('T')[0]}
+        dateCreated={date_created.split('T')[0]}
+      >
+        <ApplicationActionButtons
+          id={id}
+          onRemove={() => {
+            onRemove(id);
+          }}
+        />
+      </ListElement>
+    ));
+  }, [registrations]);
+
   return (
     <div className='application-list'>
       <div className='application-list__header'>
@@ -25,18 +69,7 @@ export default function List() {
 
         <span className='application-list__header-element'>Decyzja</span>
       </div>
-      <div className='application-list__list'>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-        <ListElement><ApplicationActionButtons /></ListElement>
-      </div>
+      <div className='application-list__list'>{registrationsComponents}</div>
       <div className='application-list__buttons'>
         <div className='application-list__button'>
           <Button content='Zaakceptuj wszystkie'></Button>

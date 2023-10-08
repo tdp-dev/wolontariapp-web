@@ -1,27 +1,37 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 
-const ListElement: React.FC<PropsWithChildren> = ({children}) => {
+interface ListElemntProps {
+  id: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  email: string;
+  phoneNumber: string;
+  dateCreated: string;
+  userDateCreated: string;
+  children: React.ReactNode;
+}
+
+const ListElement: React.FC<ListElemntProps> = ({ id, firstName, lastName, dateOfBirth, email, phoneNumber, dateCreated, userDateCreated, children }) => {
   return (
     <div className='application-list-element'>
-      <span className='application-list-element__header-element'>20.03.2023</span>
+      <span className='application-list-element__header-element'>{dateCreated}</span>
 
-      <span className='application-list-element__header-element'>Mateusz</span>
+      <span className='application-list-element__header-element'>{firstName}</span>
 
-      <span className='application-list-element__header-element'>Borucki</span>
+      <span className='application-list-element__header-element'>{lastName}</span>
 
-      <span className='application-list-element__header-element'>10.12.2004 (18 lat)</span>
+      <span className='application-list-element__header-element'>{dateOfBirth} (18 lat)</span>
 
-      <span className='application-list-element__header-element'>mateuszborucki@gmail.com</span>
+      <span className='application-list-element__header-element'>{email}</span>
 
-      <span className='application-list-element__header-element'>+48 512 712 147</span>
+      <span className='application-list-element__header-element'>{phoneNumber}</span>
 
-      <span className='application-list-element__header-element'>12.05.2013</span>
+      <span className='application-list-element__header-element'>{userDateCreated}</span>
 
       <span className='application-list-element__header-element'>104</span>
 
-      <span className='application-list-element__header-element'>
-        {children}
-      </span>
+      <span className='application-list-element__header-element'>{children}</span>
     </div>
   );
 };

@@ -44,11 +44,11 @@ export default function EventPage() {
   }, []);
 
   const navigateToApplications = useCallback(() => {
-    navigate('./applications');
+    navigate('applications');
   }, []);
 
   const navigateToVolunteers = useCallback(() => {
-    navigate('./volunteers');
+    navigate('volunteers');
   }, []);
 
   return (
