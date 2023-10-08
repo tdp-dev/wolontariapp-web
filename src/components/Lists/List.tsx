@@ -69,7 +69,7 @@ export default function List() {
 
         <span className='application-list__header-element'>Decyzja</span>
       </div>
-      <div className='application-list__list'>{registrationsComponents}</div>
+      <div className='application-list__list'>{registrations.length > 0 ? registrationsComponents : <h1>Brak elemntów</h1>}</div>
       <div className='application-list__buttons'>
         <div className='application-list__button'>
           <Button content='Zaakceptuj wszystkie'></Button>

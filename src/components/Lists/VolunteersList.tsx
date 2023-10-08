@@ -56,7 +56,7 @@ export default function VolunteersList() {
 
         <span className='volunteers-list__header-element'>Akcje</span>
       </div>
-      <div className='volunteers-list__list'>{registrationsComponents}</div>
+      <div className='volunteers-list__list'>{registrations.length > 0 ? registrationsComponents : <h1>Brak elemntów</h1>}</div>
     </div>
   );
 }
